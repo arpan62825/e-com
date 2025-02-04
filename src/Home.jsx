@@ -1,4 +1,5 @@
 import heroModel from "./assets/images/hero-model.png";
+import heroModelMin from "./assets/images/hero-model-min.png";
 import line from "./assets/svg/line.svg";
 import ArrowDownwardRoundedIcon from "@mui/icons-material/ArrowDownwardRounded";
 
@@ -19,13 +20,10 @@ export default function Home() {
           stewardship. Join the movement where every purchase helps regenerate
           our planet.
         </p>
-        <ArrowDownwardRoundedIcon
-          className="down-arrow"
-          fontSize="large"
-        />
+        <ArrowDownwardRoundedIcon className="down-arrow" fontSize="large" />
       </section>
       <section className="hero-image-wrapper">
-        <img className="hero-model" src={heroModel} alt="hero-model" />
+        <img className="hero-model" src={heroModelMin} alt="hero-model" />
         <img className="line-svg" src={line} alt="line-svg" />
       </section>
     </main>
