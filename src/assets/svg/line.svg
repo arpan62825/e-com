@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 400">
+  <defs>
+    <!--Grainy Effect-->
+    <filter id="grainy">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4"/>
+    </filter>
+  </defs>
+
+  <path d="M605.3811645507812,392.8251037597656C573.8191309611003,370.50074122111005,399.2002904256185,303.11808954874675,421.524658203125,262.7802734375C443.8490259806315,222.44245732625325,737.8894011942546,202.95814778645834,735.426025390625,157.8475341796875C732.9626495869954,112.73692057291666,463.5246734110514,27.097160034179687,407.1748962402344,0"
+    fill="none" stroke="#f15327" stroke-width="25" stroke-linecap="round"
+    transform="matrix(1.1025,0,-0.19440049623108263,1.1025,-20.83598387851964,-20.591927820444113)"
+    stroke-dasharray="1000" stroke-dashoffset="1000" filter="url(#grainy)">
+
+    <!-- Line Reveal Animation -->
+    <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="4s" fill="freeze"/>
+  </path>
+</svg>

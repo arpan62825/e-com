@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "power-grotesk";
+  src: url(./assets/fonts/power-grotesk/PowerGrotesk-Regular.ttf);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+:root {
+  /* Colors */
+
+  /* Primary colors */
+  --off-white: #d8cfc1;
+
+  /* Dark, Rich Colors (High Contrast) */
+  --dark-slate: #2c3e50;
+  --darker-slate: #34495e;
+  --charcoal: #3d3d3d;
+  --near-black: #1a1a1a;
+
+  /* Earthy Tones (Complementary Colors) */
+  --warm-brown: #5e4a3a;
+  --rich-brown: #5e4a3a;
+  --dark-brown: #4a3b2a;
+
+  /* Accent Colors (Pop of Color) */
+  --eco-green: #27ae60;
+  --soft-blue: #2980b9;
+  --brick-red: #c0392b;
+
+  /* Soft Neutrals (Low Contrast) */
+  --grayish-blue: #7f8c8d;
+  --light-gray: #95a5a6;
+  --light-silver: #bdc3c7;
+  --pastel-green: #4f9d69;
+}
+
+body,
+html {
+  background-color: var(--off-white);
+}
+
+.hero {
+  height: 100dvh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-text {
+  position: relative;
+  height: 100dvh;
+  max-width: 60%;
+  padding: 4rem 8%;
+}
+
+.hero-headline {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--near-black);
+  line-height: 1.2;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.hero-headline span {
+  font-family: "power-grotesk", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  background-image: linear-gradient(rgba(0, 0, 0, 0) 50%, #4f9d69 50%);
+}
+
+.hero-subhead {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--near-black);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  height: 100dvh;
+}
+
+.hero-model {
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  animation: fade-in 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.line-svg {
+  position: absolute;
+  right: -10rem;
+  top: 0;
+  z-index: 1;
+  height: 100dvh;
+}
+
+.down-arrow {
+  border: 2px black solid;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 25%;
+  left: 45%;
+  transform: translateX(-50%);
+  animation: scroll-down 1.5s ease-out 5s 3;
+}
+
+@keyframes scroll-down {
+  0%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  25% {
+    transform: translateY(20px) translateX(-50%);
+  }
+  50% {
+    transform: translateY(-15px) translateX(-50%);
+  }
+  75% {
+    transform: translateY(10px) translateX(-50%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
