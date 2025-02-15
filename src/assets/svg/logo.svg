@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" class="ephemeral-dark-minimal">
+  <!-- Modernized Dark Color Scheme -->
+  <defs>
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3a3530"/>
+      <stop offset="100%" style="stop-color:#2a2520"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Core Garment Icon (Now Monochromatic) -->
+  <path fill="none"
+        stroke="#e0d8cf"
+        stroke-width="2"
+        stroke-linecap="round"
+        d="M110 50q20 -15 40 0
+           c-10 25-15 45-10 65
+           q-20 15-40 0
+           c10-25 15-45 10-65z"/>
+
+  <!-- Ephemeral Markers (Subtle Glow) -->
+  <g opacity="0.9" class="fade-marks">
+    <path fill="#4a4540"
+          d="M150 35a5 5 0 0 1-10 0 5 5 0 0 1 10 0z"/>
+    <path fill="none"
+          stroke="#5a5550"
+          stroke-width="1.2"
+          stroke-dasharray="3 1.5"
+          d="M145 40v20
+             M155 40v20"/>
+  </g>
+
+  <!-- Brand Typography (Dark Mode Optimized) -->
+  <text x="150" y="125"
+        text-anchor="middle"
+        font-family="'Inter', sans-serif"
+        font-size="17"
+        font-weight="350"
+        letter-spacing="1.8px"
+        fill="#d0c8c0">
+    EPHEMERAL CLOTHING
+  </text>
+
+  <!-- Enhanced Interactions -->
+  <style>
+    .ephemeral-dark-minimal {
+      background: #1a1714;
+      border-radius: 8px;
+    }
+
+    .ephemeral-dark-minimal:hover path {
+      stroke: #f0e8e0;
+      transition: stroke 0.3s ease;
+    }
+
+    .ephemeral-dark-minimal:hover .fade-marks {
+      opacity: 0.6;
+      transition: opacity 0.4s ease;
+    }
+
+    .ephemeral-dark-minimal:hover text {
+      fill: #ffffff;
+      transition: fill 0.25s ease;
+    }
+  </style>
+</svg>
