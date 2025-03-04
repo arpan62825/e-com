@@ -1,19 +1,7 @@
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import heroModelMin from "../assets/images/hero-model-min.png";
 import line from "../assets/svg/line.svg";
-import ArrowDownwardRoundedIcon from "@mui/icons-material/ArrowDownwardRounded";
-
 
 export default function Home() {
-  // useGSAP(() => {
-  //   gsap.from(".hero-model", {
-  //     x: 200,
-  //     duration: 2,
-  //     opacity: 0,
-  //   });
-  // });
-
   return (
     <main className="landing-page">
       <div className="hero">
@@ -31,16 +19,13 @@ export default function Home() {
             environmental stewardship. Join the movement where every purchase
             helps regenerate our planet.
           </p>
-          <ArrowDownwardRoundedIcon className="down-arrow" fontSize="large" />
         </section>
         <section className="hero-image-wrapper">
           <img className="hero-model" src={heroModelMin} alt="hero-model" />
           <img className="line-svg" src={line} alt="line-svg" />
         </section>
       </div>
-      <section className="model-showcase">
-
-      </section>
+      <section className="model-showcase"></section>
     </main>
   );
 }
