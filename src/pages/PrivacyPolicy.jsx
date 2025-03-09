@@ -53,7 +53,7 @@ export default function PrivacyPolicy() {
         <div className="policy-sections">
           {policySections.map((section, index) => (
             <div
-              key={index} 
+              key={index}
               className={`policy-section ${
                 expandedSection === index ? "expanded" : ""
               }`}
@@ -75,7 +75,6 @@ export default function PrivacyPolicy() {
             </div>
           ))}
         </div>
-
         <div className="policy-footer">
           <p>
             If you have any questions about this Privacy Policy, please contact

@@ -50,7 +50,7 @@ export default function Header() {
       <section className="icons">
         <nav>
           <NavLink
-            to="."
+            to="search-page"
             className={({ isActive }) => {
               isActive ? "active-link" : "";
             }}
@@ -58,21 +58,21 @@ export default function Header() {
             <Search />
           </NavLink>
           <NavLink
-            to="."
+            to="cart"
             className={({ isActive }) => {
               isActive ? "active-link" : "";
             }}
           >
             <ShoppingBag />
           </NavLink>
-          <NavLink
-            to="."
+          <Link
+            to="/login"
             className={({ isActive }) => {
               isActive ? "active-link" : "";
             }}
           >
             Login
-          </NavLink>
+          </Link>
         </nav>
       </section>
     </header>

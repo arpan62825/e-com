@@ -941,3 +941,79 @@ a {
     font-size: 1.5rem;
   }
 }
+
+.login-background-image {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+.login-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--charcoal);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: 40rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  /* box-shadow: 0 0 14px black; */
+  padding-top: 1rem;
+}
+
+.login-card {
+  line-height: 2px;
+}
+
+.login-card form {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.login-card form input {
+  width: 70%;
+  height: 20%;
+}
+
+.login-card .login-signup-btn {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.login-card .login-signup-btn button {
+  width: 8rem;
+  height: 3rem;
+}
+
+.login-card div {
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem 1rem;
+}
+
+.login-card div a {
+  color: white;
+}
+
+.login-card div a:hover {
+  text-decoration: underline;
+}
+
+
+.login-card div section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
