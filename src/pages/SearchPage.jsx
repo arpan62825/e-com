@@ -6,8 +6,6 @@ export default function SearchPage() {
   const [items, setItems] = useState(products);
   const navigate = useNavigate();
   const handleClick = (item) => {
-    console.log(item);
-    setCurrentProduct(item);
     navigate(`products/${item.id}`, { state: { product: item } });
   };
   return (
