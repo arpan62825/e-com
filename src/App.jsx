@@ -13,6 +13,7 @@ import Cart from "./pages/Cart";
 import Dashboard from "./pages/Dashboard";
 import SearchPage from "./pages/SearchPage";
 import Signup from "./pages/Signup";
+import Product from "./pages/Product";
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
               <Route path="search-page" element={<SearchPage />} />
               <Route path="dashboard" element={<Dashboard />} />
             </Route>
+            <Route path="search-page/products/:id" element={<Product />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
           </Routes>

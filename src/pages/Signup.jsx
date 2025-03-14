@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import backgroundImage from "../assets/images/login-background-3.jpg";
 
 export default function Signup() {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -62,10 +63,20 @@ export default function Signup() {
         </form>
         <p>Sign up as a:</p>
         <div className="login-signup-btn">
-          <button name="customer" form="signup-form" type="submit">
+          <button
+            onClick={() => navigate(-2)}
+            name="customer"
+            form="signup-form"
+            type="submit"
+          >
             {loading ? "Signing up..." : "Customer"}
           </button>
-          <button name="seller" form="signup-form" type="submit">
+          <button
+            onClick={() => navigate("/dashboard")}
+            name="seller"
+            form="signup-form"
+            type="submit"
+          >
             {loading ? "Signing up..." : "Seller"}
           </button>
         </div>

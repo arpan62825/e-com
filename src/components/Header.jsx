@@ -16,7 +16,7 @@ export default function Header() {
           <NavLink
             to="men"
             className={({ isActive }) => {
-              return isActive ? "active-link" : "";
+              return isActive ? "active-link" : "inactive-link";
             }}
           >
             Men
@@ -24,7 +24,7 @@ export default function Header() {
           <NavLink
             to="Women"
             className={({ isActive }) => {
-              return isActive ? "active-link" : "";
+              return isActive ? "active-link" : "inactive-link";
             }}
           >
             Women
@@ -32,7 +32,7 @@ export default function Header() {
           <NavLink
             to="Kids"
             className={({ isActive }) => {
-              return isActive ? "active-link" : "";
+              return isActive ? "active-link" : "inactive-link";
             }}
           >
             Kids
@@ -40,7 +40,7 @@ export default function Header() {
           <NavLink
             to="Gifts"
             className={({ isActive }) => {
-              return isActive ? "active-link" : "";
+              return isActive ? "active-link" : "inactive-link";
             }}
           >
             Gifts
@@ -52,7 +52,7 @@ export default function Header() {
           <NavLink
             to="search-page"
             className={({ isActive }) => {
-              isActive ? "active-link" : "";
+              isActive ? "active-link" : "inactive-link";
             }}
           >
             <Search />
@@ -60,7 +60,7 @@ export default function Header() {
           <NavLink
             to="cart"
             className={({ isActive }) => {
-              isActive ? "active-link" : "";
+              isActive ? "active-link" : "inactive-link";
             }}
           >
             <ShoppingBag />
@@ -68,7 +68,7 @@ export default function Header() {
           <Link
             to="/login"
             className={({ isActive }) => {
-              isActive ? "active-link" : "";
+              isActive ? "active-link" : "inactive-link";
             }}
           >
             Login
