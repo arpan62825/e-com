@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Layout from "./layout/Layout";
 import Resources from "./pages/Resources";
-import Cursor from "./components/cursor";
+import Cursor from "./components/Cursor";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
 import TermsConditions from "./pages/Terms&Conditions";
