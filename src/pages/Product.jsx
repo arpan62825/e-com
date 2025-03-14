@@ -1,27 +1,9 @@
 import { useParams, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import products from "../components/products";
 
 export default function Product() {
   const location = useLocation();
   const product = location.state?.product;
-  console.log(product);
-  console.log(location.state);
-
-  // const [currentProduct, setCurrentProduct] = useState({});
-  // const { id: productId } = useParams();
-  // useEffect(() => {
-  //   console.log(productId);
-  //   console.log(products[0].id);
-
-  //   const foundProduct = products.find((product) => {
-  //     return product.id === productId;
-  //   });
-  //   localStorage.setItem("currentProduct", JSON.stringify(foundProduct.id));
-  //   console.log(foundProduct);
-
-  //   setCurrentProduct(foundProduct);
-  // }, [productId, currentProduct]);
 
   return (
     <>
