@@ -25,3 +25,17 @@ dist-ssr/
 *.njsproj
 *.sln
 *.sw?
+
+# Other unnecessary files
+*.tmp
+*.bak
+*.orig
+*.rej
+*.swp
+*.swo
+*.swn
+*.swo
+*.swn
+
+# Ignore font licenses
+src/assets/fonts/power-grotesk/Licenses/**
