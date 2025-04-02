@@ -1,9 +1,23 @@
 import { useParams, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export default function Product() {
+export default function Product({ handleAddToCart }) {
   const location = useLocation();
   const product = location.state?.product;
+  const [currentProductCount, setCurrentProductCount] = useState(1);
+
+  const handleCurrentProductCount = (e) => {
+    if (e.target.id === "decrease-quantity" && currentProductCount > 1) {
+      setCurrentProductCount((prevCount) => (prevCount -= 1));
+    } else if (e.target.id === "increase-quantity") {
+      setCurrentProductCount((prevCount) => (prevCount += 1));
+    } else {
+      alert("Please select an amount greater that zero");
+    }
+  };
+
+  const originalPrice = (product.price * 0.25 + product.price).toFixed(2);
+  //    ^^^^^^^^^^^^^ this is a string since .toFixed() returns a string.
 
   return (
     <>
@@ -30,8 +44,8 @@ export default function Product() {
 
           {/* Price */}
           <div className="product-price">
-            <span className="original-price">₹{product.price}</span>
-            <span className="sale-price">₹95.00</span>
+            <span className="original-price">${originalPrice}</span>
+            <span className="sale-price">${product.price}</span>
           </div>
 
           {/* Description */}
@@ -40,23 +54,37 @@ export default function Product() {
           {/* Quantity Counter */}
           <div className="quantity-label">Quantity</div>
           <div className="quantity-selector">
-            <button className="quantity-button" id="decrease-quantity">
+            <button
+              onClick={handleCurrentProductCount}
+              className="quantity-button"
+              id="decrease-quantity"
+            >
               −
             </button>
             <input
-              type="text"
+              type="number"
               className="quantity-input"
               id="quantity"
-              value={1}
+              min="1"
+              value={currentProductCount}
             />
-            <button className="quantity-button" id="increase-quantity">
+            <button
+              onClick={handleCurrentProductCount}
+              className="quantity-button"
+              id="increase-quantity"
+            >
               +
             </button>
           </div>
 
           {/* Action Buttons */}
           <div className="action-buttons">
-            <button className="add-to-cart">Add to Cart</button>
+            <button
+              onClick={() => handleAddToCart(product, currentProductCount)}
+              className="add-to-cart"
+            >
+              Add to Cart
+            </button>
             <button className="buy-now">Buy Now</button>
           </div>
 

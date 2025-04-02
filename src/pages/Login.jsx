@@ -1,9 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { auth } from "../components/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import backgroundImage from "../assets/images/login-background-3.jpg";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+
+  const handleNavigation = () => {
+    navigate("/search-page");
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -11,7 +18,17 @@ export default function Login() {
     const formData = new FormData(formElement);
     const email = formData.get("email");
     const password = formData.get("password");
-    console.log(email, password);
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        handleNavigation();
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error(errorCode, errorMessage);
+      });
+
     setLoading(true);
     formElement.reset();
   };
