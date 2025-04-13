@@ -16,9 +16,9 @@ import SearchPage from "./pages/SearchPage";
 import Signup from "./pages/Signup";
 import Product from "./pages/Product";
 import Checkout from "./pages/Checkout";
+import Profile from "./pages/Profile";
 
 export default function App() {
-
   const [cartItems, setCartItems] = useState(() => {
     const storedItems = localStorage.getItem("cartItems");
     return storedItems ? JSON.parse(storedItems) : [];
@@ -77,6 +77,7 @@ export default function App() {
               path="search-page/products/:id"
               element={<Product handleAddToCart={handleAddToCart} />}
             />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/login" element={<Login />} />
             <Route
               path="/cart"

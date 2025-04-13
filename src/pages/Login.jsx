@@ -9,7 +9,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
 
   const handleNavigation = () => {
-    navigate("/search-page");
+    navigate("/profile");
   };
 
   const handleSubmit = (e) => {
@@ -21,6 +21,7 @@ export default function Login() {
 
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
+        console.log("Logged in");
         handleNavigation();
       })
       .catch((error) => {

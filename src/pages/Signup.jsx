@@ -2,7 +2,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import backgroundImage from "../assets/images/login-background-3.jpg";
 import { auth } from "../components/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+} from "firebase/auth";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -28,7 +31,13 @@ export default function Signup() {
       createUserWithEmailAndPassword(auth, emailValue, passwordValue)
         .then(() => {
           console.log("fetching data");
-          handleNavigation(role);
+          sendEmailVerification(auth.currentUser)
+            .then(() => {
+              console.log("verification email sent.");
+            })
+            .catch((error) => {
+              console.log(error);
+            });
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -55,6 +64,20 @@ export default function Signup() {
       navigate("/dashboard");
     }
   }
+
+  const checkVerificationStatus = async () => {
+    try {
+      auth.currentUser.reload();
+      if (auth.currentUser.emailVerified) {
+        console.log("the email is verified.");
+        handleNavigation(role);
+      } else {
+        console.log("the email is not verified");
+      }
+    } catch (error) {
+      console.error("An error occurred: " + error);
+    }
+  };
 
   return (
     <>
@@ -116,6 +139,11 @@ export default function Signup() {
           </section>
           <Link to="/login">Forgot Password</Link>
         </div>
+        <p style={{ color: "white" }}>
+          We've sent you a verification email. Please confirm the email and
+          press the button.
+        </p>
+        <button onClick={checkVerificationStatus}>Continue</button>
       </div>
     </>
   );

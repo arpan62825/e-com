@@ -65,26 +65,43 @@ html {
 }
 
 .hero-headline {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: var(--near-black);
-  line-height: 1.2;
-  letter-spacing: 3px;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-.hero-headline span {
   font-family: "power-grotesk", "Trebuchet MS", "Lucida Sans Unicode",
     "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  background-image: linear-gradient(rgba(0, 0, 0, 0) 50%, #4f9d69 50%);
+  font-size: 3.5rem;
+  color: transparent;
+  background: url("./assets/images/background-texture.jpeg") center/cover
+    no-repeat;
+  line-height: 1.2;
+  letter-spacing: 3px;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.image-as-letter {
+  display: inline-block;
+  height: 2.5rem;
+  width: 4rem;
+  margin: 0 0.2rem;
+  border-radius: 500px;
+  border: 1px solid var(--near-black);
+}
+
+.image-as-letter img {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 500px;
 }
 
 .hero-subhead {
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--charcoal);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
 }
 
 .hero-description {
@@ -106,29 +123,74 @@ html {
   margin-right: 2rem;
 }
 
-.line-svg {
-  position: absolute;
-  right: -10rem;
-  top: 0;
-  z-index: 1;
-  overflow-y: visible;
-  height: 100dvh;
+/* MODEL SHOWCASE */
+.model-showcase-slider {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-.down-arrow-button {
-  border: none;
+.list {
+  margin-top: 15rem;
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+  position: relative;
 }
 
-.down-arrow {
-  border: 2px black solid;
-  border-radius: 50%;
+.model-items {
+  height: 100%;
+  width: auto;
   position: absolute;
-  bottom: 25%;
-  left: 45%;
-  transform: translateX(-50%);
-  cursor: pointer;
-  z-index: 2;
+  left: 0;
+  transform: translateX(100vw);
+  animation: auto-run 10s linear infinite;
+  animation-delay: calc(2s * (var(--position) - 1));
 }
+
+@keyframes auto-run {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.model-items .model-image {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.list:hover .model-items {
+  animation-play-state: paused !important;
+}
+
+.list:hover .model-image {
+  filter: grayscale(1);
+}
+
+.list .model-image:hover {
+  filter: grayscale(0);
+}
+
+.reviews {
+  height: 100vh;
+  padding-top: 6rem;
+}
+
+.reviews-container {
+  height: calc(100vh - 40rem);
+}
+
+
 
 header {
   border-radius: 12px;

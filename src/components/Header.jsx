@@ -1,9 +1,24 @@
+import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
-import logo from "../assets/images/logo.png";
-// import SearchIcon from '@mui/icons-material/Search';
+import logo from "../assets/images/logo1.png";
 import { Search, ShoppingBag } from "@mui/icons-material";
+import PersonIcon from "@mui/icons-material/person";
+import { auth } from "./firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 export default function Header() {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(user);
+        setUser(user && user.emailVerified ? user : null);
+      } else {
+        console.log("You are currently not signed in");
+      }
+    });
+  }, []);
+
   return (
     <header>
       <section className="logo-container">
@@ -71,7 +86,7 @@ export default function Header() {
               isActive ? "active-link" : "inactive-link";
             }}
           >
-            Login
+            {user ? <PersonIcon /> : "Login"}
           </Link>
         </nav>
       </section>
