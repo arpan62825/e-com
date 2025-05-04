@@ -19,10 +19,16 @@ import Checkout from "./pages/Checkout";
 import Profile from "./pages/Profile";
 
 export default function App() {
+  const [windowSize, setWindowSize] = useState(screen.width);
+  window.addEventListener("resize", () => {
+    setWindowSize(screen.width);
+  });
+
   const [cartItems, setCartItems] = useState(() => {
     const storedItems = localStorage.getItem("cartItems");
     return storedItems ? JSON.parse(storedItems) : [];
   });
+  const [isSeller, setIsSeller] = useState(false);
 
   const handleAddToCart = (product, currentProductCount) => {
     setCartItems((prevItems) => {
@@ -60,10 +66,10 @@ export default function App() {
   return (
     <>
       <ReactLenis root>
-        <Cursor />
+        {windowSize >= 768 ? <Cursor /> : ""}
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Layout isSeller={isSeller} />}>
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
               <Route path="resources" element={<Resources />} />
@@ -71,8 +77,8 @@ export default function App() {
               <Route path="refund-policy" element={<RefundPolicy />} />
               <Route path="terms-conditions" element={<TermsConditions />} />
               <Route path="search-page" element={<SearchPage />} />
-              <Route path="dashboard" element={<Dashboard />} />
             </Route>
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route
               path="search-page/products/:id"
               element={<Product handleAddToCart={handleAddToCart} />}
@@ -92,7 +98,10 @@ export default function App() {
               path="/checkout"
               element={<Checkout cartItems={cartItems} />}
             />
-            <Route path="/signup" element={<Signup />} />
+            <Route
+              path="/signup"
+              element={<Signup setIsSeller={setIsSeller} />}
+            />
           </Routes>
         </BrowserRouter>
       </ReactLenis>

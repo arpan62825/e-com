@@ -56,20 +56,21 @@ export default function Login() {
             required
           />
         </form>
-        <div className="login-signup-btn">
-          <Link to="../signup">
-            <button>Sign up</button>
-          </Link>
-          <button type="submit" form="login-form">
-            {loading ? "Loading..." : "Login"}
-          </button>
+        <button className="login-button" type="submit" form="login-form">
+          {loading ? "Loading..." : "Login"}
+        </button>
+        <div className="signup-link">
+          <p>
+            Don't have an account?
+            <Link to="../signup"> Sign up</Link>
+          </p>
         </div>
         <div>
-          <section>
+          {/* <section>
             <input id="remember-me" type="checkbox" />
             <label htmlFor="remember-me">Remember Me</label>
           </section>
-          <Link to="/login">Forgot Password</Link>
+          <Link to="/login">Forgot Password</Link> */}
         </div>
       </div>
     </>

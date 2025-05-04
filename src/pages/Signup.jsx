@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import backgroundImage from "../assets/images/login-background-3.jpg";
 import { auth } from "../components/firebase";
@@ -7,7 +7,7 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 
-export default function Signup() {
+export default function Signup({ setIsSeller }) {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(null);
   const [password, setPassword] = useState("");
@@ -57,9 +57,11 @@ export default function Signup() {
 
   function handleNavigation(role) {
     if (role === "customer") {
+      setIsSeller(false);
       console.log("signing in as a customer");
       navigate(-2);
     } else if (role === "seller") {
+      setIsSeller(true);
       console.log("signing in as a seller");
       navigate("/dashboard");
     }
@@ -72,6 +74,7 @@ export default function Signup() {
         console.log("the email is verified.");
         handleNavigation(role);
       } else {
+        window.alert("Your email is not verified, try again.");
         console.log("the email is not verified");
       }
     } catch (error) {
@@ -81,8 +84,8 @@ export default function Signup() {
 
   return (
     <>
-      <img className="login-background-image" src={backgroundImage} alt="" />
-      <div className="login-card">
+      <img className="signup-background-image" src={backgroundImage} alt="" />
+      <div className="signup-card">
         <h1>Sign up</h1>
         <p>with your email</p>
         <form id="signup-form" onSubmit={handleSubmit}>
@@ -114,7 +117,7 @@ export default function Signup() {
           />
         </form>
         <p>Sign up as a:</p>
-        <div className="login-signup-btn">
+        <div className="signup-btns">
           <button
             onClick={() => setRole("customer")}
             name="customer"
@@ -132,19 +135,18 @@ export default function Signup() {
             {loading ? "Signing up..." : "Seller"}
           </button>
         </div>
-        <div>
-          <section>
-            <input id="remember-me" type="checkbox" />
-            <label htmlFor="remember-me">Remember Me</label>
-          </section>
-          <Link to="/login">Forgot Password</Link>
-        </div>
-        <p style={{ color: "white" }}>
-          We've sent you a verification email. Please confirm the email and
-          press the button.
-        </p>
-        <button onClick={checkVerificationStatus}>Continue</button>
       </div>
+      {password === confirmPassword && role ? (
+        <div className="verification-confirm-card">
+          <p>
+            We've sent you a verification email. Please verify your email and
+            press continue.
+          </p>
+          <button onClick={checkVerificationStatus}>Continue</button>
+        </div>
+      ) : (
+        ""
+      )}
     </>
   );
 }

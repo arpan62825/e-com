@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { database } from "../components/firebase";
 
 const Checkout = ({ cartItems }) => {
   // Calculate the total
@@ -10,7 +12,6 @@ const Checkout = ({ cartItems }) => {
       }, 0)
       .toFixed(2)
   );
-  console.log(cartItems);
 
   const shipping = Number((subTotal > 100 ? 0 : subTotal * 0.15).toFixed(2));
 
@@ -28,9 +29,18 @@ const Checkout = ({ cartItems }) => {
     const name = formData.get("name");
     const address = formData.get("address");
     const email = formData.get("email");
+    try {
+      const docRef = addDoc(collection(database, "detail"), {
+        name,
+        address,
+        email,
+      });
+      console.log("Data added to the database.");
+    } catch (error) {
+      console.error("An error occurred while performing the task: " + error);
+    }
     formElement.reset();
   };
-
   return (
     <div className="checkout-container">
       <div className="checkout-grid">
