@@ -23,7 +23,7 @@ This project encompasses essential features such as product browsing, user authe
 
 ## Project Structure
 
-e-com/
+```e-com/
 ├── src/
 │   ├── components/        # Reusable UI components
 │   ├── pages/             # Different pages like Home, About Us, etc.
