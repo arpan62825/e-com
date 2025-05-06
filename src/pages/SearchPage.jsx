@@ -3,7 +3,10 @@ import { useState, useEffect } from "react";
 import products from "../components/products";
 import { v4 as uuidv4 } from "uuid";
 
-export default function SearchPage() {
+export default function SearchPage({ searchText }) {
+  useEffect(() => {
+    console.log(searchText);
+  }, [searchText]);
   const [items, setItems] = useState(products);
   const navigate = useNavigate();
   useEffect(() => {

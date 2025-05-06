@@ -342,7 +342,27 @@ header .moto {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1.4rem;
+}
+
+.search-bar-holder {
+  margin: auto 2rem;
+  position: absolute;
+  top: 50%;
+  right: 13%;
+  transform: translateY(-50%);
+}
+
+.search-bar {
+  width: 16rem;
+  border: 1px solid var(--near-black);
+  border-radius: 4px;
+  background: transparent;
+}
+
+.search-bar:focus {
+  outline: none;
+  border: 2px solid var(--near-black);
 }
 
 .logo-container img {

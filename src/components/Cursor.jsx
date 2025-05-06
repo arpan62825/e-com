@@ -11,8 +11,8 @@ export default function Cursor() {
       const { clientX, clientY } = event;
 
       gsap.to(cursorRef.current, {
-        x: clientX - 10,
-        y: clientY - 10,
+        x: clientX - 11,
+        y: clientY - 11,
         duration: 1,
         ease: "power4.out",
         force3D: true,
