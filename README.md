@@ -23,17 +23,17 @@ This project encompasses essential features such as product browsing, user authe
 
 ## Project Structure
 
-```e-com/
-├── src/
-│   ├── components/        # Reusable UI components
-│   ├── pages/             # Different pages like Home, About Us, etc.
-│   └── assets/            # Images, fonts, and other assets
-├── index.html             # Main HTML file
-├── script.js              # Entry point for JavaScript
-├── package.json           # Project metadata and dependencies
-├── vite.config.js         # Vite configuration
-├── eslint.config.js       # ESLint configuration
-└── .gitignore             # Files and directories to ignore in Git
+    ```e-com/
+    ├── src/
+    │   ├── components/        # Reusable UI components
+    │   ├── pages/             # Different pages like Home, About Us, etc.
+    │   └── assets/            # Images, fonts, and other assets
+    ├── index.html             # Main HTML file
+    ├── script.js              # Entry point for JavaScript
+    ├── package.json           # Project metadata and dependencies
+    ├── vite.config.js         # Vite configuration
+    ├── eslint.config.js       # ESLint configuration
+    └── .gitignore             # Files and directories to ignore in Git
 
 ## Getting Started
 
@@ -49,6 +49,7 @@ This project encompasses essential features such as product browsing, user authe
    cd e-com
    npm install
    npm run dev
+   ```
 
 ## 🤝 Contributing
 
