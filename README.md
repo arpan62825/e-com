@@ -23,17 +23,19 @@ This project encompasses essential features such as product browsing, user authe
 
 ## Project Structure
 
-    ```e-com/
-    ├── src/
-    │   ├── components/        # Reusable UI components
-    │   ├── pages/             # Different pages like Home, About Us, etc.
-    │   └── assets/            # Images, fonts, and other assets
-    ├── index.html             # Main HTML file
-    ├── script.js              # Entry point for JavaScript
-    ├── package.json           # Project metadata and dependencies
-    ├── vite.config.js         # Vite configuration
-    ├── eslint.config.js       # ESLint configuration
-    └── .gitignore             # Files and directories to ignore in Git
+```bash
+e-com/
+├── src/
+│   ├── components/        # Reusable UI components
+│   ├── pages/             # Different pages like Home, About Us, etc.
+│   └── assets/            # Images, fonts, and other assets
+├── index.html             # Main HTML file
+├── script.js              # Entry point for JavaScript
+├── package.json           # Project metadata and dependencies
+├── vite.config.js         # Vite configuration
+├── eslint.config.js       # ESLint configuration
+└── .gitignore             # Files and directories to ignore in Git
+```
 
 ## Getting Started
 
@@ -51,6 +53,8 @@ This project encompasses essential features such as product browsing, user authe
    npm run dev
    ```
 
+````
+
 ## 🤝 Contributing
 
 Contributions are welcome!
@@ -65,3 +69,8 @@ This project is licensed under the **MIT License**.
 
 - [Vite](https://vitejs.dev/) – Development tooling
 - [ESLint](https://eslint.org/) – Linting and code consistency
+
+```
+
+```
+````
