@@ -4,6 +4,7 @@ import logo from "../assets/images/logo.png";
 import { Search, ShoppingBag, Person } from "@mui/icons-material";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import SearchPage from "../pages/SearchPage";
 
 export default function Header({ isSeller }) {
   const [user, setUser] = useState(null);
@@ -56,7 +57,7 @@ export default function Header({ isSeller }) {
             }}
           >
             <span onClick={handleSearchFocus}>
-              <Search searchText={searchText} />
+              <Search />
             </span>
           </NavLink>
           <NavLink

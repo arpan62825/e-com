@@ -1,6 +1,9 @@
+// HOOKS
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ReactLenis } from "lenis/react";
+
+// COMPONENTS
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Layout from "./layout/Layout";

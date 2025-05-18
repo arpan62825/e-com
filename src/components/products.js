@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-// going by relative route, giving the route to the image as "../assets/images/product-images/model-showcase-1" should have worked. as both the products.js and SearchPage.jsx are at the same tree-level. but for some reason, the path must start with /src... WHY?
+// going by relative route, giving the route to the image as "../assets/images/product-images/model-showcase-1" should have worked. as both the products.js and SearchPage.jsx are at the same tree-level. but for some reason, the path must start with ..... WHY?
 
 const products = [
   {
@@ -142,8 +142,7 @@ const products = [
     price: 87.49,
     description: `Dyed with real indigo for a timeless blue shade.`,
     image: `/src/assets/images/product-images/model-showcase-20.jpeg`,
-  }
+  },
 ];
-
 
 export default products;

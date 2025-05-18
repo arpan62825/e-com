@@ -53,8 +53,6 @@ e-com/
    npm run dev
    ```
 
-````
-
 ## 🤝 Contributing
 
 Contributions are welcome!
@@ -69,8 +67,4 @@ This project is licensed under the **MIT License**.
 
 - [Vite](https://vitejs.dev/) – Development tooling
 - [ESLint](https://eslint.org/) – Linting and code consistency
-
 ```
-
-```
-````
